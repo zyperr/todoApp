@@ -1,4 +1,3 @@
-import { uniqueDates } from '../services/date.js';
 import checkComplete from './checkComplete.js';
 import deleteIcon from './deleteIcon.js';
 import { displayTasks } from './readTasks.js';
