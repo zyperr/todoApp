@@ -1,0 +1,364 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Dosis", sans-serif;
+  font-size: 16px;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    -45deg,
+    #3f51b1 0%,
+    #5a55ae 13%,
+    #7b5fac 25%,
+    #8f6aae 38%,
+    #a86aa4 50%,
+    #cc6b8e 62%,
+    #f18271 75%,
+    #f3a469 87%,
+    #f7c978 100%
+  );
+  background-size: 400% 400%;
+  position: relative;
+  animation: animate 7.5s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.mainCard {
+  width: 40vw;
+  border-radius: 25px;
+  background-color: #fff;
+  padding: 25px;
+}
+
+.title {
+  font-family: "Dosis", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 15px;
+}
+
+.inputForm {
+  border: none;
+  padding: 10px;
+  border: 1px solid #eee;
+  outline: none;
+  width: 35%;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+
+.inputForm::placeholder {
+  padding: 0px;
+}
+
+.btnCreate {
+  padding: 5px 10px;
+  margin: 0 5px 0 5px;
+  background-image: linear-gradient(-109.6deg, #5d178b 11.2%, #6a15a3 100.2%);
+  border: none;
+  color: #f3f4f5;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cardsList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  max-height: 60vh;
+  height: 60vh;
+}
+
+.card {
+  width: 90%;
+  padding: 15px;
+  box-shadow: 2px 4px 4px 4px rgba(71, 71, 71, 0.16);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  margin: 5px 0px;
+  position: relative;
+}
+
+.task {
+  padding: 10px;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: rgba(62, 161, 219, 1);
+}
+
+.completeIcon {
+  color: rgba(62, 161, 219, 1);
+}
+
+.trashIcon:hover {
+  color: #f00;
+}
+
+.deleteConfirmationPop {
+  position: relative;
+  background-color: rgba(255, 255, 255);
+  z-index: 99;
+  width: 100%;
+  top: -100px;
+  left: 0;
+}
+.deleteSpace {
+  position: relative;
+  width: 30%;
+}
+
+.noTasks {
+  font-size: 48px;
+}
+.date {
+  list-style: none;
+  margin: 10px;
+  font-size: 1.5em;
+  width: 94%;
+}
+/*MODO OSCURO*/
+
+.cardModoOscuro {
+  background: linear-gradient(109.6deg, #030300 11.2%, #1a1a1a 100.2%);
+}
+
+.cardModoOscuro .inputForm {
+  background: linear-gradient(
+    -109.6deg,
+    #5d178b 11.2%,
+    #6a15a3 100.2%,
+    #891ad2
+  );
+  border: 1px solid #030300;
+  color: #e3e2e3;
+}
+.cardModoOscuro .inputForm::placeholder {
+  color: #e3e2e3;
+}
+.cardModoOscuro .card {
+  background: linear-gradient(-109.6deg, #5d178b 11.2%, #6a15a3 100.2%);
+  color: #e3e2e3;
+  box-shadow: 2px 4px 4px 4px rgba(108, 29, 118, 0.397);
+}
+
+.cardModoOscuro .icon:hover {
+  color: rgba(223, 63, 183, 0.763);
+}
+.cardModoOscuro .completeIcon:checked {
+  color: #5d178b 11.2%;
+}
+.cardModoOscuro .date {
+  color: #e3e2e3;
+  list-style: none;
+  margin: 10px;
+  font-size: 1.5em;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+/*Responsive celulares tamaño M*/
+@media screen and (max-width: 375px) {
+  .mainCard {
+    width: 75vw;
+    height: 80%;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 25px;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .inputForm {
+    margin: 10px;
+  }
+  .inputForm:first-of-type {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+  }
+  .inputForm:last-of-type {
+    width: 100%;
+  }
+  .btnCreate {
+    padding: 1rem;
+  }
+  .cardsList {
+    max-height: 50vh;
+    height: 50vh;
+  }
+  .card {
+    width: 90%;
+  }
+  span {
+    font-size: 15px;
+  }
+  .date {
+    font-size: 27px;
+  }
+}
+/*Responsive celulares tamaño L*/
+
+@media screen and (max-width: 425px) {
+  .mainCard {
+    width: 75vw;
+    height: 80%;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 25px;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .inputForm {
+    margin: 10px;
+  }
+  .inputForm:first-of-type {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+  }
+  .inputForm:last-of-type {
+    width: 100%;
+  }
+  .btnCreate {
+    padding: 1rem;
+  }
+  .cardsList {
+    max-height: 50vh;
+    height: 50vh;
+  }
+  .card {
+    width: 90%;
+  }
+  span {
+    font-size: 17px;
+  }
+  .date {
+    font-size: 27px;
+  }
+}
+
+/*Responsive Tablets*/
+
+@media screen and (min-width: 768px) {
+  .mainCard {
+    width: 75vw;
+    height: 80%;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 25px;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .inputForm {
+    margin: 10px;
+    height: 50px;
+    font-size: 25px;
+  }
+  .inputForm:first-of-type {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+  }
+  .inputForm:last-of-type {
+    width: 100%;
+  }
+  .btnCreate {
+    padding: 1.5rem 5rem;
+  }
+  .cardsList {
+    max-height: 50vh;
+    height: 50vh;
+  }
+  .card {
+    width: 90%;
+    height: 30px;
+  }
+  span {
+    font-size: 25px;
+  }
+  .date {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  form {
+    display: flex;
+    flex-direction: initial;
+    flex-wrap: initial;
+  }
+
+  .mainCard {
+    width: 40vw;
+    border-radius: 25px;
+  }
+
+  .inputForm {
+    width: initial;
+    height: initial;
+    font-size: initial;
+  }
+  .inputForm:first-of-type {
+    width: 200px;
+    height: 30px;
+  }
+  .inputForm:last-of-type {
+    width: 200px;
+    height: 30px;
+  }
+  .btnCreate {
+    padding: 1rem;
+  }
+
+  .cardsList {
+    max-height: 60vh;
+    height: 60vh;
+    overflow: hidden;
+  }
+  span {
+    font-size: 20px;
+  }
+  .date {
+    font-size: 1.5em;
+  }
+}
